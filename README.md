@@ -1,0 +1,2 @@
+# etch-a-sketch
+Will be creating a etch-a-sketch/sketchpad. The project will consist of having a 16x16 adjustable grid platform that the user can color by selecting one of many selections. The default selection is black, however the user can change the color using a color selector, rainbow, gray scale, and more. The user can also change the grid size from 2x2 up to 64x64. Lastly, there will be an eraser and a clear table.
