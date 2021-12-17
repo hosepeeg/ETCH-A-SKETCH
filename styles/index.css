@@ -38,8 +38,8 @@ h1{
     border: .5ch solid black;
     margin: auto;
     justify-content: center;
-    width: 60vh;
-    height: 60vh;
+    width: 80vh;
+    height: 80vh;
 }
 .block{
     border: 0.1ch solid black;
