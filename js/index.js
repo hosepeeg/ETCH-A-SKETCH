@@ -1,3 +1,13 @@
+const container = document.querySelector(`.container`);
+const slider = document.getElementById("slider");
+const erasor = document.getElementById("erasorButton");
+const grayScaleButton = document.getElementById("grayScaleButton");
+const rainbowButton = document.getElementById(`rainbowButton`);
+const clearButton = document.getElementById(`clearButton`);
+const colorPicker = document.getElementById(`colorPicker`);
+const backgroundColor = document.getElementById(`backgroundColor`);
+
+
 function createDivs(number = 64){
     number *= number;
     for(let i = 0; i < number; i++){
@@ -7,4 +17,9 @@ function createDivs(number = 64){
         console.log(`loops ${i}`);
     }
 }
-const container = document.querySelector(`.container`);
+
+function changeRange(){
+    
+}
+
+createDivs();
