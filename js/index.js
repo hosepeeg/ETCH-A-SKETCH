@@ -10,6 +10,9 @@ const output = document.querySelector(`output`);
 
 let color = `#000000`;
 let bgColor = `#FFFFFF`;
+let rainbow = false;
+let greyscale = false;
+let erase = false;
 
 //sets the background color of all divs to current background color
 function reset(){
@@ -25,6 +28,7 @@ function chooseColor(){
     color = colorPicker.value;
 }
 
+//fills the color of bakground of selected color
 function bgChange(){
     bgColor = backgroundColor.value;
     reset();
@@ -75,11 +79,59 @@ slider.addEventListener(`input`, function() {
 
 //colors the div based on selected button
 function changeColor(e){
-    e.target.style.backgroundColor = color;
+    if(rainbow === true){
+        let R = Math.floor(Math.random() * 256);
+        let G = Math.floor(Math.random() * 256);
+        let B = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${R} ${G} ${B})`;
+    }
+    else if(erase === true){
+        e.target.style.backgroundColor = bgColor;
+    }
+    else{
+        e.target.style.backgroundColor = color;
+    }
 }
 
 //will handle the event on click for reset button (runs reset function)
 clearButton.addEventListener(`click`, reset);
 colorPicker.addEventListener(`change`, chooseColor);
+colorPicker.addEventListener(`click`, chooseColor);
 backgroundColor.addEventListener(`change`, bgChange);
+
+rainbowButton.addEventListener(`click`, function(){
+    if(rainbow === true){
+        rainbow = false;
+    }
+    else{
+        erase = false;
+        rainbow = true;
+        greyscale = false;
+    }
+});
+
+//makes pointer color to that of the background to erase moused-over blocks
+erasor.addEventListener(`click`, function() {
+    if(erase === true){
+        erase = false;
+    }
+    else{
+        erase = true;
+        rainbow = false;
+        greyscale = false;
+    }
+});
+
+grayScaleButton.addEventListener(`click`, function() {
+    if(greyscale === true){
+        greyscale = false;
+    }
+
+    else{
+        erase = false;
+        rainbow = false;
+        greyscale = true;
+    }
+});
+
 createDivs();
