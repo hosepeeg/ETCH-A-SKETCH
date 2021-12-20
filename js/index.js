@@ -25,6 +25,10 @@ function chooseColor(){
     color = colorPicker.value;
 }
 
+function bgChange(){
+    bgColor = backgroundColor.value;
+    reset();
+}
 
 //creates divs based on the dimensions given by the slider
 function createDivs(number = 64){
@@ -77,4 +81,5 @@ function changeColor(e){
 //will handle the event on click for reset button (runs reset function)
 clearButton.addEventListener(`click`, reset);
 colorPicker.addEventListener(`change`, chooseColor);
+backgroundColor.addEventListener(`change`, bgChange);
 createDivs();
