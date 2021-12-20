@@ -42,5 +42,6 @@ h1{
     height: 80vh;
 }
 .block{
-    border: 0.1ch solid black;
+    border-left: 0.1ch solid black;
+    border-top: 0.1ch solid black;
 }
