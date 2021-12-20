@@ -1,7 +1,6 @@
 const container = document.querySelector(`.container`);
 const slider = document.getElementById("slider");
 const erasor = document.getElementById("erasorButton");
-const grayScaleButton = document.getElementById("grayScaleButton");
 const rainbowButton = document.getElementById(`rainbowButton`);
 const clearButton = document.getElementById(`clearButton`);
 const colorPicker = document.getElementById(`colorPicker`);
@@ -11,7 +10,6 @@ const output = document.querySelector(`output`);
 let color = `#000000`;
 let bgColor = `#FFFFFF`;
 let rainbow = false;
-let greyscale = false;
 let erase = false;
 
 //sets the background color of all divs to current background color
@@ -26,6 +24,8 @@ function reset(){
 //changes the selected color for painting blocks
 function chooseColor(){
     color = colorPicker.value;
+    erase = false;
+    rainbow = false;
 }
 
 //fills the color of bakground of selected color
@@ -106,7 +106,6 @@ rainbowButton.addEventListener(`click`, function(){
     else{
         erase = false;
         rainbow = true;
-        greyscale = false;
     }
 });
 
@@ -118,20 +117,8 @@ erasor.addEventListener(`click`, function() {
     else{
         erase = true;
         rainbow = false;
-        greyscale = false;
     }
 });
 
-grayScaleButton.addEventListener(`click`, function() {
-    if(greyscale === true){
-        greyscale = false;
-    }
-
-    else{
-        erase = false;
-        rainbow = false;
-        greyscale = true;
-    }
-});
 
 createDivs();
