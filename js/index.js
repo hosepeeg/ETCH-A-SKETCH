@@ -8,18 +8,22 @@ const colorPicker = document.getElementById(`colorPicker`);
 const backgroundColor = document.getElementById(`backgroundColor`);
 const output = document.querySelector(`output`);
 
-let color = `white`;
+let color = `#000000`;
+let bgColor = `#FFFFFF`;
 
 //sets the background color of all divs to current background color
 function reset(){
     let children = container.getElementsByTagName("div"); //creates array of all div elements in container
     for(let i = 0; i<children.length; i++){
-        children[i].style.background = color;
-    }
+        children[i].style.background = bgColor;
+        }
+
 }
 
 //changes the selected color for painting blocks
-
+function chooseColor(){
+    color = colorPicker.value;
+}
 
 
 //creates divs based on the dimensions given by the slider
@@ -67,10 +71,10 @@ slider.addEventListener(`input`, function() {
 
 //colors the div based on selected button
 function changeColor(e){
-    e.target.style.backgroundColor = `black`;
+    e.target.style.backgroundColor = color;
 }
 
 //will handle the event on click for reset button (runs reset function)
 clearButton.addEventListener(`click`, reset);
-
+colorPicker.addEventListener(`change`, chooseColor);
 createDivs();
