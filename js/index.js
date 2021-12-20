@@ -7,19 +7,23 @@ const clearButton = document.getElementById(`clearButton`);
 const colorPicker = document.getElementById(`colorPicker`);
 const backgroundColor = document.getElementById(`backgroundColor`);
 const output = document.querySelector(`output`);
-
 function createDivs(number = 64){
-    lastRow = number;
+    let firstRow = number;
     number *= number;
-    lastRow = number - lastRow;
     for(let i = 0; i < number; i++){
         let divs = document.createElement(`div`);
         divs.classList = `block`;
         container.appendChild(divs);
+        divs.addEventListener(`mouseover`, changeColor);
 
-        //add bottom border to divs on last row
-        if(i >= lastRow){
-            divs.style.borderBottom = `0.2ch solid black`
+        //remove top border of first row
+        if(i < firstRow){
+            divs.style.borderTop = `0ch`;
+        }
+
+        //remove left border of first div on each row
+        if((i+1)%firstRow === 1){
+            divs.style.borderLeft = `0ch`;
         }
     }
 }
@@ -38,5 +42,12 @@ slider.addEventListener(`input`, function() {
     container.style.gridTemplateColumns = `repeat(${slider.value}, 1fr)`;
     createDivs(number);
 }, false);
+
+//colors the div based on selected button
+function changeColor(e){
+    e.target.style.backgroundColor = `black`;
+    console.log(e.target);
+}
+
 
 createDivs();

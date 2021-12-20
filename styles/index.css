@@ -35,7 +35,7 @@ h1{
     display: grid;
     grid-template-rows: repeat(64, 1fr);
     grid-template-columns: repeat(64, 1fr);
-    border: .5ch solid black;
+    border: .2ch solid black;
     margin: auto;
     justify-content: center;
     width: 80vh;
