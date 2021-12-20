@@ -46,3 +46,7 @@ h1{
     border-left: 0.1ch solid black;
     border-top: 0.1ch solid black;
 }
+
+p{
+    margin: 0px;
+}
