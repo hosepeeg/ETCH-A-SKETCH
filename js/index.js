@@ -7,11 +7,28 @@ const clearButton = document.getElementById(`clearButton`);
 const colorPicker = document.getElementById(`colorPicker`);
 const backgroundColor = document.getElementById(`backgroundColor`);
 const output = document.querySelector(`output`);
+
+let color = `white`;
+
+//sets the background color of all divs to current background color
+function reset(){
+    let children = container.getElementsByTagName("div"); //creates array of all div elements in container
+    for(let i = 0; i<children.length; i++){
+        children[i].style.background = color;
+    }
+}
+
+//changes the selected color for painting blocks
+
+
+
+//creates divs based on the dimensions given by the slider
 function createDivs(number = 64){
     let lastRow = number;
     let last = number;
     number *= number;
     lastRow = number - lastRow
+
     for(let i = 0; i < number; i++){
         let divs = document.createElement(`div`);
         divs.classList = `block`;
@@ -31,12 +48,14 @@ function createDivs(number = 64){
     }
 }
 
+//clears the divs within the container
 function clearDivs(){
     while(container.firstChild){
         container.removeChild(container.firstChild);
     }
 }
 
+//allows slider to change the dimensions of the grid
 slider.addEventListener(`input`, function() {
     output.innerHTML = `${slider.value} x ${slider.value}`;
     let number = slider.value;
@@ -51,5 +70,7 @@ function changeColor(e){
     e.target.style.backgroundColor = `black`;
 }
 
+//will handle the event on click for reset button (runs reset function)
+clearButton.addEventListener(`click`, reset);
 
 createDivs();
