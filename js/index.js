@@ -8,23 +8,26 @@ const colorPicker = document.getElementById(`colorPicker`);
 const backgroundColor = document.getElementById(`backgroundColor`);
 const output = document.querySelector(`output`);
 function createDivs(number = 64){
-    let firstRow = number;
+    let lastRow = number;
+    let last = number;
     number *= number;
+    lastRow = number - lastRow
     for(let i = 0; i < number; i++){
         let divs = document.createElement(`div`);
         divs.classList = `block`;
         container.appendChild(divs);
+
+        //adds bottom border to last row
+        if(i >= lastRow){
+            divs.style.borderBottom = `0.1ch solid black`;
+        }
+
+        //adds right border to last div on rightmost of container
+        if((i+1)%last === 0){
+            divs.style.borderRight = `0.1ch solid black`;
+        }
+        
         divs.addEventListener(`mouseover`, changeColor);
-
-        //remove top border of first row
-        if(i < firstRow){
-            divs.style.borderTop = `0ch`;
-        }
-
-        //remove left border of first div on each row
-        if((i+1)%firstRow === 1){
-            divs.style.borderLeft = `0ch`;
-        }
     }
 }
 
@@ -46,7 +49,6 @@ slider.addEventListener(`input`, function() {
 //colors the div based on selected button
 function changeColor(e){
     e.target.style.backgroundColor = `black`;
-    console.log(e.target);
 }
 
 

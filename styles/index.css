@@ -40,6 +40,7 @@ h1{
     justify-content: center;
     width: 80vh;
     height: 80vh;
+    padding: 50px;
 }
 .block{
     border-left: 0.1ch solid black;
