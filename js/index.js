@@ -28,6 +28,7 @@ function chooseColor(){
     color = colorPicker.value;
     erase = false;
     rainbow = false;
+    gray = false;
 }
 
 //fills the color of bakground of selected color
