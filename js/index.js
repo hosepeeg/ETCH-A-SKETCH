@@ -6,6 +6,7 @@ const clearButton = document.getElementById(`clearButton`);
 const colorPicker = document.getElementById(`colorPicker`);
 const backgroundColor = document.getElementById(`backgroundColor`);
 const output = document.querySelector(`output`);
+const body = document.querySelector(`body`);
 
 let color = `#FFFFFF`;
 let bgColor = `#FFFFFF`;
@@ -121,5 +122,5 @@ erasor.addEventListener(`click`, function() {
     }
 });
 
-
+body.style.background = "url('/ETCH-A-SKETCH/imgs/space.jpg')";
 createDivs();
