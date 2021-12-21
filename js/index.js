@@ -9,7 +9,7 @@ const output = document.querySelector(`output`);
 const body = document.querySelector(`body`);
 
 let color = `#FFFFFF`;
-let bgColor = `#FFFFFF`;
+let bgColor = `#000000`;
 let rainbow = false;
 let erase = false;
 
