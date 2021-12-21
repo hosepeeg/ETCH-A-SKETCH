@@ -4,6 +4,7 @@
     font-weight: 600;
 }
 
+/*adjust background to custom image and size image proportions*/
 body{
     display: flex;
     justify-content: center;
@@ -12,6 +13,7 @@ body{
     background-repeat: no-repeat;
 }
 
+/*size buttons to have enough space for txt*/
 .button{
     width: 10vh;
     height: 5vh;
@@ -19,15 +21,18 @@ body{
     background: purple;
 }
 
+/*push input colors to top of options bar*/
 #erasorButton, #slider{
     margin-top: auto;
 }
 
+/*space the text above input colors properly*/
 label{
     margin-top: 2vh;
     margin-bottom: 0.5vh;
 }
 
+/* center content to middle of the screen and fit content based on its contents width */
 .content{
     margin-top: 10vh;
     display: flex;
@@ -38,6 +43,7 @@ label{
     background-color: black;
 }
 
+/* adjust spacing and size of options bar to match grid */
 .options{
     display: flex;
     flex-direction: column;
@@ -47,6 +53,8 @@ label{
     border: 1ch double purple;
 }
 
+/* set up initial grid and center all items in middle of container
+with spacing between entire grid and border of content */
 .container{
     display: grid;
     grid-template-rows: repeat(64, 1fr);
@@ -59,15 +67,19 @@ label{
     height: 80vh;
     padding: 50px;
 }
+
+/*give border without overlapping for all added divs*/
 .block{
     border-left: 0.1ch solid purple;
     border-top: 0.1ch solid purple;
 }
 
+/*give space from last element of options from the bottom*/
 output{
     margin-bottom: 2.5vh;
 }
 
+/*remove the white background from the color input elements*/
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
