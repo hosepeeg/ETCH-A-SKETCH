@@ -102,7 +102,7 @@ input[type="color"]::-webkit-color-swatch {
 #slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
-  width: 25ch; /* Full-width */
+  width: 22ch; /* Full-width */
   height: 2.40vh; /* Specified height */
   background: purple; /* Grey background */
   outline: none; /* Remove outline */
