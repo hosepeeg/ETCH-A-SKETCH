@@ -36,7 +36,7 @@ function bgChange(){
 }
 
 //creates divs based on the dimensions given by the slider
-function createDivs(number = 64){
+function createDivs(number = 32){
     let lastRow = number;
     let last = number;
     number *= number;
