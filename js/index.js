@@ -17,6 +17,7 @@ let erase = false;
 function reset(){
     let children = container.getElementsByTagName("div"); //creates array of all div elements in container
     for(let i = 0; i<children.length; i++){
+        children[i].style.opacity = 1;
         children[i].style.background = bgColor;
         }
 
@@ -84,17 +85,28 @@ function changeColor(e){
         let R = Math.floor(Math.random() * 256);
         let G = Math.floor(Math.random() * 256);
         let B = Math.floor(Math.random() * 256);
+        e.target.style.opacity = 1;
         e.target.style.backgroundColor = `rgb(${R} ${G} ${B})`;
     }
     else if(erase === true){
+        e.target.style.opacity = 1;
         e.target.style.backgroundColor = bgColor;
     }
+    else if(gray === true){
+        if(e.target.style.opacity === 1){
+            e.target.style.opacity = 0.8;
+        }
+        else if(e.target.style.backgroundColor !== bgColor){
+            e.target.style.opacity = e.target.style.opacity - 0.2;
+        }
+    }
     else{
+        e.target.style.opacity = 1;
         e.target.style.backgroundColor = color;
     }
 }
 
-//will handle the event on click for reset button (runs reset function)
+//button event handlers
 clearButton.addEventListener(`click`, reset);
 colorPicker.addEventListener(`change`, chooseColor);
 colorPicker.addEventListener(`click`, chooseColor);
@@ -108,6 +120,7 @@ rainbowButton.addEventListener(`click`, function(){
     else{
         erase = false;
         rainbow = true;
+        gray = false;
     }
 });
 
@@ -119,6 +132,21 @@ erasor.addEventListener(`click`, function() {
     else{
         erase = true;
         rainbow = false;
+        gray = false;
     }
 });
+
+let gray = false;
+const grayScale = document.querySelector(`#grayScale`);
+grayScale.addEventListener(`click`, function() {
+    if(gray === true){
+        gray = false;
+    }
+    else{
+        erase = false;
+        rainbow = false;
+        gray = true;
+    }
+});
+
 createDivs();

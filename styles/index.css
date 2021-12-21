@@ -72,6 +72,7 @@ with spacing between entire grid and border of content */
 .block{
     border-left: 0.1ch solid purple;
     border-top: 0.1ch solid purple;
+    opacity: 1;
 }
 
 /*give space from last element of options from the bottom*/
