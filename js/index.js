@@ -122,5 +122,5 @@ erasor.addEventListener(`click`, function() {
     }
 });
 
-body.style.background = "url('/ETCH-A-SKETCH/imgs/space.jpg')";
+body.style.background = "url('/etchSketch/imgs/space.jpg')";
 createDivs();
