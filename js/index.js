@@ -121,6 +121,4 @@ erasor.addEventListener(`click`, function() {
         rainbow = false;
     }
 });
-
-body.style.background = "url('/etchSketch/imgs/space.jpg')";
 createDivs();
