@@ -10,7 +10,7 @@ body{
     justify-content: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image: url(/imgs/space.jpg);
+    background-image: url(../imgs/space.jpg);
 }
 
 /*size buttons to have enough space for txt*/
