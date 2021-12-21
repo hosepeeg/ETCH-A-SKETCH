@@ -1,41 +1,58 @@
 *{
     box-sizing: border-box;
+    color: whitesmoke;
+    font-weight: 600;
 }
 
-h1{
-    text-align: center;
-    margin-bottom: 10vh;
+body{
+    display: flex;
+    justify-content: center;
+    background-image: url(/imgs/space.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .button{
     width: 10vh;
-    height: 3vh;
+    height: 5vh;
+    margin: 2vh;
+    background: purple;
+}
+
+#erasorButton, #slider{
+    margin-top: auto;
+}
+
+label{
+    margin-top: 2vh;
+    margin-bottom: 0.5vh;
 }
 
 .content{
+    margin-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#slider{
-    margin-top: 5vh;
+    background-color: white;
+    width: fit-content;
+    background-color: black;
 }
 
 .options{
     display: flex;
     flex-direction: column;
-    padding: 10vh;
     align-items: center;
-    justify-content: space-around;
-    height: 60vh;
+    height: 80vh;
+    width: 25vh;
+    border: 1ch double purple;
 }
 
 .container{
     display: grid;
     grid-template-rows: repeat(64, 1fr);
     grid-template-columns: repeat(64, 1fr);
-    border: .2ch solid black;
+    border: 1ch double purple;
+    border-left: .1 solid purple;
     margin: auto;
     justify-content: center;
     width: 80vh;
@@ -43,10 +60,62 @@ h1{
     padding: 50px;
 }
 .block{
-    border-left: 0.1ch solid black;
-    border-top: 0.1ch solid black;
+    border-left: 0.1ch solid purple;
+    border-top: 0.1ch solid purple;
 }
 
-p{
-    margin: 0px;
+output{
+    margin-bottom: 2.5vh;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 8ch;
+	height: 4vh;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+
+#slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+#slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 25ch; /* Full-width */
+  height: 2.40vh; /* Specified height */
+  background: purple; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+#slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: white; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+#slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: white; /* Green background */
+  cursor: pointer; /* Cursor on hover */
 }

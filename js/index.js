@@ -7,7 +7,7 @@ const colorPicker = document.getElementById(`colorPicker`);
 const backgroundColor = document.getElementById(`backgroundColor`);
 const output = document.querySelector(`output`);
 
-let color = `#000000`;
+let color = `#FFFFFF`;
 let bgColor = `#FFFFFF`;
 let rainbow = false;
 let erase = false;
@@ -48,12 +48,12 @@ function createDivs(number = 64){
 
         //adds bottom border to last row
         if(i >= lastRow){
-            divs.style.borderBottom = `0.1ch solid black`;
+            divs.style.borderBottom = `0.1ch solid purple`;
         }
 
         //adds right border to last div on rightmost of container
         if((i+1)%last === 0){
-            divs.style.borderRight = `0.1ch solid black`;
+            divs.style.borderRight = `0.1ch solid purple`;
         }
         
         divs.addEventListener(`mouseover`, changeColor);
@@ -98,6 +98,7 @@ clearButton.addEventListener(`click`, reset);
 colorPicker.addEventListener(`change`, chooseColor);
 colorPicker.addEventListener(`click`, chooseColor);
 backgroundColor.addEventListener(`change`, bgChange);
+backgroundColor.addEventListener(`click`, bgChange);
 
 rainbowButton.addEventListener(`click`, function(){
     if(rainbow === true){
