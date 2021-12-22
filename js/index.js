@@ -47,6 +47,7 @@ function createDivs(number = 32){
     for(let i = 0; i < number; i++){
         let divs = document.createElement(`div`);
         divs.classList = `block`;
+        divs.style.backgroundColor = bgColor;
         container.appendChild(divs);
 
         //adds bottom border to last row
